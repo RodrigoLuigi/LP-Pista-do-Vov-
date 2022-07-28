@@ -11,79 +11,110 @@
 
   <link rel="stylesheet" href="style.css">
 
-   <!-- FONTS -->
-   <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Staatliches&display=swap" rel="stylesheet">
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Staatliches&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
   <div class="container">
+
     <header>
-      <img src="https://i.pinimg.com/564x/a3/66/f0/a366f0bd29643c888c394de5f6d76a3f.jpg" alt="">
-
-      <div class="header-info">
-        <h1>Treinos Exclusivos do Vovô!</h1>
-
-        <p>Melhore sua performance na bike, venha treinar conosco! </p>
-        <img class="spinner" src="assets/catraca.png" alt="">
-        <button onclick="openForm()">Fazer inscrição</button>
-      </div>
     </header>
 
+    <section>
+      <div class="header">
+        <img src="https://i.pinimg.com/564x/a3/66/f0/a366f0bd29643c888c394de5f6d76a3f.jpg" alt="">
+
+        <div class="header-info">
+          <h1>Treinos Exclusivos do Vovô!</h1>
+
+          <p>Melhore sua performance na bike, venha treinar conosco! </p>
+          <img class="spinner" src="assets/catraca.png" alt="">
+          <button onclick="openForm()">Fazer inscrição</button>
+        </div>
+      </div>
+
+      <div class="container-wrapper">
+
+        <div class="line"></div>
+
+        <div class="section-wrapper" style="padding: 2rem; display: flex; flex-direction: column; gap: 3rem;">
+          <h1 style="margin-top: 3rem; color: rgb(1, 255, 99); text-align: center;">TREINOS</h1>
+          <p style="color: rgb(255, 255, 255);">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae ut
+            veritatis fuga minima eum dolore hic voluptatibus itaque, nihil consequuntur distinctio officia earum maxime
+            unde molestias quaerat animi sunt velit?</p>
+        </div>
+
+        <div class="line2"></div>
+
+        <div class="section-wrapper" style="padding: 2rem; display: flex; flex-direction: column; gap: 3rem;">
+          <h1 style="margin-top: 3rem; color: rgb(1, 255, 99); text-align: center;">DEPOIMENTOS</h1>
+          <p style="color: rgb(255, 255, 255);">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae ut
+            veritatis fuga minima eum dolore hic voluptatibus itaque, nihil consequuntur distinctio officia earum maxime
+            unde molestias quaerat animi sunt velit?</p>
+        </div>
+
+        
+      </div>
+      <div class="line"></div>
+
+
+    </section>
+
+
+    
+
+
     <div id="modal">
+      <form id="my-form" action="https://formsubmit.co/digaor@gmail.com" method="POST">
+         
+        <button id="btnClosed" type="button"  onclick="modalClose()">X</button>
 
-      <form id="my-form">
         <fieldset>
-          <button onclick="modalClose()"
-            style="font-size: 1.8rem; border: none; background-color: #FFFFFF; position: absolute; top: 2rem; right: 2rem; ">X</button>
-
           <div class="fieldset-wrapper">
             <legend>Informações pessoais</legend>
 
             <div class="input-wrapper-info">
               <div class="info">
                 <label for="info-name">Nome</label>
-                <input type="text" id="info-name" required>
+                <input type="text" name="nome" id="info-name" required>
               </div>
 
               <div class="info">
                 <label for="info-subname">Sobrenome</label>
-                <input type="text" id="info-subname" required>
+                <input type="text" name="sobrenome" id="info-subname" required>
               </div>
             </div>
 
             <div class="input-wrapper">
               <label for="info-email">Email <span>(digite um email válido)</span></label>
-              <input type="email" id="info-email" required>
-            </div>
-
-            <div class="input-wrapper">
-              <label for="info-password">Senha <span>(mínimo de 6 caracteres)</span></label>
-              <input type="password" id="info-password" minlength="6" required>
-            </div>
-          </div>
-        </fieldset>
-        <fieldset>
-          <div class="fieldset-wrapper">
-            <legend>Informações do mentor</legend>
-
-            <div class="input-wrapper">
-              <label for="info-mentor-name">Nome do seu mentor <span>(só o primeiro nome)</span></label>
-              <input type="text" id="info-mentor-name" required>
+              <input type="email" name="email" id="info-email" required>
             </div>
           </div>
         </fieldset>
 
         <fieldset>
           <div class="fieldset-wrapper">
-            <legend>Seus horários disponíveis</legend>
-            <h2>Primeira mentoria</h2>
+            <legend>Informações do treino</legend>
+
+            <div class="input-wrapper">
+              <label for="info-mentor-name">Tipo de treino <span>(basico, médio ou avançado)</span></label>
+              <input type="text" name="tipo" id="info-mentor-name" required>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div class="fieldset-wrapper">
+            <!--legend>Seus horários disponíveis</!--legend-->
+            <h2></h2>
 
             <div class="col-3">
-              <div class="input-wrapper">
+              <!--div class="input-wrapper">
                 <label for="info-date">Data <span>(DD/MM/AAAA)</span></label>
                 <input type="date" id="info-date" required>
-              </div>
+              </!--div>
 
               <div class="info-time">
                 <div class="input-wrapper">
@@ -95,21 +126,26 @@
                   <label for="info-end">Até</label>
                   <input type="time" id="info-end" required>
                 </div>
+
               </div>
+
+              <div-- class="input-wrapper">
+                <label for="upload-checkout">Comprovante de pagamento</label>
+                <input type="file"  name="comprovante" id="upload-checkout" required>
+              </div-->
             </div>
 
           </div>
         </fieldset>
 
       </form>
-      <footer>
+      <div class="formSubmit">
         <input class="button" type="submit" form="my-form" value="enviar">
-      </footer>
+      </div>
     </div>
 
-    
-
   </div>
+
 
   <script src="script.js"></script>
 </body>

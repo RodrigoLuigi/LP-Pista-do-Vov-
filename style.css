@@ -18,14 +18,21 @@ body {
   margin: 0 auto;
 }
 
-header {
+.header {
   color: #FFFFFF;
 }
 
-
-header img {
+.header img {
   width: 100%;
   height: 30rem;
+}
+
+.header .spinner {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  filter: invert();
+  animation: spin 4s linear infinite;
 }
 
 .header-info {
@@ -38,6 +45,12 @@ header img {
   max-width: 45rem;
   margin: 0rem auto;
   padding: 0 4rem;
+}
+
+.header-info h1 {
+  text-align: center;
+  color: #ebebeb;
+
 }
 
 .header-info p {
@@ -78,12 +91,30 @@ header img {
 
 }
 
+#btnClosed {
+  font-size: 1.8rem;
+  border: none;
+  background-color: #e76666;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  padding: 1rem;
+  border-radius: 50%;
+  color: #ffffff;
+}
+
+.buttonClose:hover{
+  background-color: #ca4646;
+
+}
+
 /*==== FORM CONFIG ====*/
 form {
+  max-width: 75rem;
   background: #FFFFFF;
   border-radius: 20px 20px 0px 0px;
 
-  margin-top: 5.8rem;
+  margin: 5.8rem auto 0;
   padding: 3rem;
   min-height: 30rem;
 
@@ -208,15 +239,16 @@ fieldset legend {
   gap: 1rem;
 }
 
-footer {
+.formSubmit {
+  max-width: 75rem;
   background: #6f837a;
   padding: 5.2rem 7.1rem;
 
   border-radius: 0px 0px 20px 20px;
-  margin-bottom: 10rem;
+  margin: 0 auto 10rem;
 }
 
-footer .button {
+.formSubmit .button {
   width: 100%;
   height: 5.5rem;
 
@@ -237,17 +269,42 @@ footer .button {
   font-family: 'Staatliches', cursive;
 }
 
-footer .button:hover{
+.formSubmit .button:hover {
   background: #d0435f;
 }
 
-.spinner {
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  filter: invert();
-  animation: spin 1s linear infinite;
+.container-wrapper {
+  max-width: 75rem;
+  margin: 0 auto;
 }
+
+.section-wrapper {
+  margin: 0 2rem;
+  border-radius: 2rem;
+  min-height: 55rem;
+  background-color: rgba(56, 48, 48, 0.39);
+  border-left: inset #996DFF;
+  border-right: inset #996DFF;
+}
+
+.line {
+  height: 2px;
+  width: 100%;
+
+  margin: 8rem 0 0;
+
+  background: linear-gradient(45deg, #8257e6, transparent);
+}
+
+.line2 {
+  height: 2px;
+  width: 100%;
+
+  margin: 8rem 0;
+
+  background: linear-gradient(275deg, #8257e6, transparent);
+}
+
 
 @keyframes spin {
   to {
@@ -256,24 +313,29 @@ footer .button:hover{
 }
 
 /*==== ANIMATION ====*/
-@keyframes topdown{
-  0% {
-    opacity: 0;
-    transform: translateY(-150px);
-  }
-
-  100% {
+@keyframes topdown {
+  from {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(100vh);
   }
 }
 
 @keyframes downtop {
-0% {
-  transform: translateY(400px);
+  0% {
+    transform: translateY(400px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
-100% {
-  transform: translateY(0);
+.form-topout{
+  animation: topdown 700ms forwards;
 }
-}
+
